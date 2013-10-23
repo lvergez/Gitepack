@@ -1,0 +1,42 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+{% include'flash.html' %} }}
+{% block content %}
+
+
+    <h1>ajouter une réservation</h1>
+    <form action="" method="post" name="sandbox-container" >
+        {{form.hidden_tag()}}
+
+        <div class="input-daterange" id="datepicker">
+    <input type="text" class="input-small" name="start" />
+
+    <input type="text" class="input-small" name="end" />
+
+</div>
+        {{ form.customer }}
+
+            <input type="submit" value="rajouter!">
+
+    </form>
+<script>
+
+   $(function() {
+     $("#datepicker").datepicker(
+        {
+        format: "dd-mm-yyyy",
+        startView: 1,
+        todayBtn: true,
+        language: "fr",
+        daysOfWeekDisabled: "0,1,2,3,4,5",
+        calendarWeeks: true,
+        autoclose: true}
+
+     );
+   });
+ </script>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+<h3>Voici vos réservations</h3>
+
+
+<div class="row" id="gitecontainer">
+
+    <div class="span8">
+        <table class="table ">
+        <tr>
+            <th>ID</th>
+            <th>début</th>
+            <th>fin</th>
+            <th>customer number</th>
+        </tr>
+            {% for booking in bookings %}
+                <tr>
+
+                    <td> <b>{{booking.id}}</td>
+                    <td> <b>{{booking.start.strftime('%d-%m-%Y')}}</td>
+                    <td> <b>{{booking.end.strftime('%d-%m-%Y')}}</td>
+                    <td> <b>{{booking.customer_id}}</td>
+
+
+                </tr>
+            {%endfor%}
+
+
+        </table>
+    </div>
+
+
+</div>

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+      <h1>Hello, {{user.nickname}}!</h1>
+        Voici le détail de votre gite
+
+
+<p> <b>Nom: </b> {{gite.nickname}} <br><b> Capacite = </b>{{ gite.capacity }} </p> <br>
+    <h4>bookings : {{ gite.bookings.count() }}</h4>
+    <br>
+
+
+    <a href="{{ url_for('addbooking',id = gite.id)}}">rajouter un booking</a>
+ {% include'listbookings.html' %}
+{%endblock%}

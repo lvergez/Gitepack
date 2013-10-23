@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+  <meta charset="utf-8">
+     {% if title %}
+     {% else %}
+     <title>GitePAck</title>
+     {% endif %}
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+ <div class="container">
+      <div class="navbar">
+        <div class="navbar-inner">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Gîtepack</a>
+            <ul class="nav">
+              <li><a href="{{ url_for('index') }}">Accueil</a></li>
+              {% if g.user.is_authenticated() %}
+              <li><a href="{{ url_for('user', nickname = g.user.nickname) }}">Votre Profil</a></li>
+              <li><a href="{{ url_for('logout') }}">Déconnection</a></li>
+              {% endif %}
+            </ul>
+          <div class="nav-collapse collapse">
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+
+  <div class="hero-unit">
+  <h1>Bienvenue sur Gîtepack</h1>
+  <p>Gîtepack élimine les tâches répétitives, vous aide à vous organiser, et vous permet de gérer vos réservations, en ligne ou sur papier, de A à Z</p>
+  <p>
+    <a class="btn btn-primary btn-large">
+      En savoir plus
+    </a>
+  </p>
+</div>
+ </div>
+   </body>
+</html>

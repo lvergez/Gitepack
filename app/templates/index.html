@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+    {% include 'flash.html' %}
+      <h1>Bienvenue, {{user.nickname}}!</h1>
+{%  include 'listgites.html' %}
+{%endblock%}

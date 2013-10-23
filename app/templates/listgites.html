@@ -1,0 +1,25 @@
+
+<h3>Voici vos gites</h3>
+<a href = "gite/add">Rajouter un gite</a>
+
+<div class="row" id="gitecontainer">
+
+    <div class="span8">
+        <table class="table ">
+            {% for gite in gites %}
+                <tr>
+
+                    <td> <b>{{gite.nickname}}</td>
+                    <td> <b>{{gite.bookings.count()}} réservation{% if gite.bookings.count() >1 %}s{% endif %} </td>
+                    <td> <a href="{{url_for('giteview',id = gite.id)}}">voir</a></td>
+                    <td> <a href="{{url_for('gitedelete',id = gite.id)}}">effacer</a> </td>
+
+                </tr>
+            {%endfor%}
+
+
+        </table>
+    </div>
+
+
+</div>
